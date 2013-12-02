@@ -1,0 +1,25 @@
+[Patrick] 11/26 10:00 PM
+
+Created Ball.py
+added ball class
+-added initialization
+-added move
+-added wallcheck
+-added intersect
+-added combine
+Created hw8sol.py
+added booleans for modes
+added parsing of data file
+-accounted for random T/F
+-accounted for initialization line in file
+-accounted for nonrandom ball descriptions
+-accounted for N random balls to be made
+added randomball to Ball.py
+
+[Patrick] 11/27 1:00 AM
+
+Created Read Me.txt
+added Read Me
+Created Chang Log.txt
+added basic structure of Change Log
+

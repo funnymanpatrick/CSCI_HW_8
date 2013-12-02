@@ -1,0 +1,16 @@
+Initial ball configuration
+Ball: 0: position (120.0,275.0), radius 12.0, motion (8.0,1.0), color red
+Ball: 1: position (180.0,355.0), radius 10.0, motion (-1.0,-7.0), color green
+Ball: 2: position (270.0,145.0), radius 18.0, motion (5.0,5.0), color yellow
+
+Iteration 8 collision between ball 0 and 1 to form ball 3
+Ball 0: position (184.0,283.0), radius 12.0, motion (8.0,1.0), color red
+Ball 1: position (172.0,299.0), radius 10.0, motion (-1.0,-7.0), color green
+New ball 3: position (179.1,289.6), radius 15.6, motion (4.3,-2.3), color red
+
+Iteration 19 collision between ball 2 and 3 to form ball 4
+Ball 2: position (205.0,240.0), radius 18.0, motion (-5.0,5.0), color yellow
+Ball 3: position (226.5,264.5), radius 15.6, motion (4.3,-2.3), color red
+New ball 4: position (214.2,250.5), radius 23.8, motion (-1.0,1.9), color yellow
+
+Ends at iteration 20 with only ball 4 remaining

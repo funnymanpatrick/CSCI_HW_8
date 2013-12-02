@@ -1,0 +1,25 @@
+Initial ball configuration
+Ball: 0: position (267.0,10.0), radius 8.0, motion (-1.0,-1.0), color yellow
+Ball: 1: position (18.0,20.0), radius 9.0, motion (-7.0,8.0), color red
+Ball: 2: position (172.0,30.0), radius 6.0, motion (18.0,5.0), color purple
+Ball: 3: position (353.0,10.0), radius 9.0, motion (-10.0,-11.0), color blue
+Ball: 4: position (143.0,20.0), radius 6.0, motion (13.0,-8.0), color yellow
+
+Iteration 6 collision between ball 2 and 3 to form ball 5
+Ball 2: position (280.0,30.0), radius 6.0, motion (18.0,-5.0), color purple
+Ball 3: position (293.0,32.0), radius 9.0, motion (-10.0,-11.0), color blue
+New ball 5: position (289.0,31.4), radius 10.8, motion (-1.4,-9.2), color blue
+
+Iteration 11 collision between ball 4 and 5 to form ball 6
+Ball 4: position (286.0,28.0), radius 6.0, motion (13.0,-8.0), color yellow
+Ball 5: position (282.1,22.2), radius 10.8, motion (-1.4,9.2), color blue
+New ball 6: position (283.0,23.6), radius 12.4, motion (2.0,5.1), color blue
+
+Iteration 33 collision between ball 0 and 1 to form ball 7
+Ball 0: position (234.0,37.0), radius 8.0, motion (-1.0,1.0), color yellow
+Ball 1: position (221.0,44.0), radius 9.0, motion (7.0,-8.0), color red
+New ball 7: position (226.7,40.9), radius 12.0, motion (3.5,-4.0), color red
+
+Ends at the maximum number of iterations, 80, with the following balls remaining
+Ball 6: position (419.0,13.4), radius 12.4, motion (2.0,-5.1), color blue
+Ball 7: position (386.3,32.9), radius 12.0, motion (3.5,4.0), color red

@@ -1,0 +1,15 @@
+Hey Mike!
+
+Hopefully you found this!
+
+Let's use this as a check-out system for our files.
+
+If you want to use the file put your name on the next line.
+
+"      " is using the files right now!
+
+Then save this read me and when you are done remove your name and save everything
+
+Put all changes into the changelog.txt
+
+#proffesionalasfuckdontyouenjoydocumentation?
