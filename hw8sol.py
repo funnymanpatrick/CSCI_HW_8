@@ -27,7 +27,7 @@ for line in data_file:
                 balls.append(randomball(maxspeed,minr,maxr,xbound,ybound))
         #generate the ball from the doc
         else:
-            balls.append(Ball(l[0]),l[1],l[2],l[3],l[4],l[5])
+            balls.append(Ball(l[0],l[1],l[2],l[3],l[4],l[5]))
     i += 1
     
     
