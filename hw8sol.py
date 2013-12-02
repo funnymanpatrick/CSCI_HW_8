@@ -29,3 +29,6 @@ for line in data_file:
         else:
             balls.append(Ball(l[0]),l[1],l[2],l[3],l[4],l[5])
     i += 1
+    
+    
+raw_input()
