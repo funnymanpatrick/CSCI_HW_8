@@ -14,7 +14,7 @@ if __name__ == "__main__":
     ##  our user interface elements
     ##
     root = tk.Tk()
-    root.title("Lab 1")
+    root.title("HW 8 Mike and Patrick")
     
     #print data_file.read()
     for line in data_file:
@@ -48,40 +48,40 @@ if __name__ == "__main__":
                     balls.append(Ball(int(l[0]),int(l[1]),int(l[2]),int(l[3]),int(l[4]),l[5]))
             i += 1
         
-        ##  Loop until the ball runs off the screen.
-        while True:
-            wait_time = 50
-            chart_1.after(wait_time)
-            for b in balls:
-                
-                #  Here is the time in milliseconds between consecutive instances
-                #  of drawing the ball.  If this time is too small the ball will
-                #  zip across the canvas in a blur.
-                
-                #  Remove all the previously-drawn balls
-                #chart_1.delete(tk.ALL)
-                
-                # Draw an oval on the canvas within the bounding box
-                bounding_box = (b.x-b.r, b.y-b.r,b.x+b.r, b.y+b.r) 
-                chart_1.create_oval(bounding_box, fill=b.color)
-                chart_1.update()      # Actually refresh the drawing on the canvas.
-        
-                # Pause execution.  This allows the eye to catch up
-        
-        
-                # Move the ball
-                b.move()
+    ##  Loop until the ball runs off the screen.
+    while True:
+        wait_time = 50
+        chart_1.after(wait_time)
+        for b in balls:
+            
+            #  Here is the time in milliseconds between consecutive instances
+            #  of drawing the ball.  If this time is too small the ball will
+            #  zip across the canvas in a blur.
+            
+            #  Remove all the previously-drawn balls
+            #chart_1.delete(tk.ALL)
+            
+            # Draw an oval on the canvas within the bounding box
+            bounding_box = (b.x-b.r, b.y-b.r,b.x+b.r, b.y+b.r) 
+            chart_1.create_oval(bounding_box, fill=b.c)
+            chart_1.update()      # Actually refresh the drawing on the canvas.
     
-                b.wallcheck(xbound, ybound)
-                
-                for ball in balls:
-                    if ball != b:
-                        if b.intersect(ball):
-                            balls.append(b.combine(ball))
-                            balls.remove(b)
-                            balls.remove(ball)
-        ## This is an infinite loop that allows the window to listen to
-        ## "events", which are user inputs.  The only user event here is
-        ## closing the window, which ends the program. 
-        root.mainloop()
+            # Pause execution.  This allows the eye to catch up
+    
+    
+            # Move the ball
+            b.move()
+
+            b.wallcheck(xbound, ybound)
+            
+            for ball in balls:
+                if ball != b:
+                    if b.intersect(ball):
+                        balls.append(b.combine(ball))
+                        balls.remove(b)
+                        balls.remove(ball)
+    ## This is an infinite loop that allows the window to listen to
+    ## "events", which are user inputs.  The only user event here is
+    ## closing the window, which ends the program. 
+    root.mainloop()
     raw_input()
