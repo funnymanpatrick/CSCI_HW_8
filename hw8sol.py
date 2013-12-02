@@ -1,3 +1,4 @@
+import Tkinter as tk
 from Ball import *
 if __name__ == "__main__":
     #check for graphics
