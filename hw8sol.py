@@ -7,28 +7,30 @@ random = raw_input("Use random balls? ==>").lower() == "y"
 data_file = open(raw_input("Input file location ==>"))
 #counter to find first line in file
 i = 0
-balls = []
+balls = [] 
+#print data_file.read()
 for line in data_file:
-    l = line.strip().split(" ")
-    #parse first line of doc
-    if i == 0:
-        N = l[0]
-        maxit = l[1]
-        xbound = l[2]
-        ybound = l[3]
-    #every other line
-    else:
-        #if random parse 2nd line and generate N balls
-        if random:
-            maxspeed = l[0]
-            minr = l[1]
-            maxr = l[2]
-            for i in range(N):
-                balls.append(randomball(maxspeed,minr,maxr,xbound,ybound))
-        #generate the ball from the doc
+    if len(line) > 2:
+        l = line.strip().split()
+        #parse first line of doc
+        if i == 0:
+            N = int(l[0])
+            maxit = int(l[1])
+            xbound = int(l[2])
+            ybound = int(l[3])
+        #every other line
         else:
-            balls.append(Ball(l[0],l[1],l[2],l[3],l[4],l[5]))
-    i += 1
+            #if random parse 2nd line and generate N balls
+            if random:
+                maxspeed = int(l[0])
+                minr = int(l[1])
+                maxr = int(l[2])
+                for i in range(N):
+                    balls.append(randomball(maxspeed,minr,maxr,xbound,ybound))
+            #generate the ball from the doc
+            else:
+                balls.append(Ball(int(l[0]),int(l[1]),int(l[2]),int(l[3]),int(l[4]),l[5]))
+        i += 1
     
     
 raw_input()
