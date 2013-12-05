@@ -3,6 +3,7 @@ from random import random,choice,randint
 class Ball(object):
     #initialization
     def __init__(self,x,y,r,dx,dy,c):
+        self.draw = True
         self.x = float(x)
         self.y = float(y)
         self.r = float(r)
@@ -43,6 +44,8 @@ class Ball(object):
         dy = (ars * self.dy) + (aro * other.dy)
         dy /= (ars+aro)
         r = sqrt((ars+aro) / pi )
+        self.draw = False
+        other.draw = False
         if ars >= aro:
             c = self.c
         else:
