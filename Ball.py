@@ -10,6 +10,9 @@ class Ball(object):
         self.dx = float(dx)
         self.dy = float(dy)
         self.c = c
+    #called when print ball is executed
+    def __str__(self):
+        return 'position (%.1f,%.1f), radius %.1f, motion (%.1f,%.1f), color %s' %(self.x, self.y, self.r, self.dx, self.dy, self.c)
     #basic move function
     def move(self):
         self.x += self.dx
