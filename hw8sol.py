@@ -30,8 +30,8 @@ if __name__ == "__main__":
                 ##  This canvas is called chart_1.  By passing root in the call
                 ##  before, chart_1 is attached to the root canvas.
                 ##
-                maxx = 400 # canvas width, in pixels
-                maxy = 400 # canvas height, in pixels
+                maxx = xbound # canvas width, in pixels
+                maxy = ybound # canvas height, in pixels
                 chart_1 = tk.Canvas(root, width=maxx, height=maxy, background="white")
                 chart_1.grid(row=0, column=0)
             #every other line
@@ -53,10 +53,11 @@ if __name__ == "__main__":
     ##  Loop until the ball runs off the screen.
     i = 0
     bNum = len(balls)
-    while len(balls) > 1:
+    while len(balls) > 1 and i < maxit:
         i += 1
         wait_time = 200
         chart_1.after(wait_time)
+        chart_1.delete(tk.ALL)
         for b in balls:
             b.move()
             b.wallcheck(xbound, ybound)
