@@ -2,17 +2,17 @@ from math import sqrt,pi
 from random import random,choice,randint
 class Ball(object):
     #initialization
-    def __init__(self,x,y,r,dx,dy,c):
-        self.draw = True
+    def __init__(self,x,y,r,dx,dy,c,num):
         self.x = float(x)
         self.y = float(y)
         self.r = float(r)
         self.dx = float(dx)
         self.dy = float(dy)
         self.c = c
+        self.num = num
     #called when print ball is executed
     def __str__(self):
-        return 'position (%.1f,%.1f), radius %.1f, motion (%.1f,%.1f), color %s' %(self.x, self.y, self.r, self.dx, self.dy, self.c)
+        return 'Ball: %i: position (%.1f,%.1f), radius %.1f, motion (%.1f,%.1f), color %s' %(self.num, self.x, self.y, self.r, self.dx, self.dy, self.c)
     #basic move function
     def move(self):
         self.x += self.dx
@@ -35,7 +35,7 @@ class Ball(object):
         else:
             return False
     #combines two balls and returns new ball
-    def combine(self,other):
+    def combine(self,other,num):
         ars = pi * ( self.r ** 2 )
         aro = pi * ( other.r ** 2 )
         x = (ars * self.x) + (aro * other.x)
@@ -53,15 +53,15 @@ class Ball(object):
             c = self.c
         else:
             c = other.c
-        return Ball(x,y,r,dx,dy,c)
+        return Ball(x,y,r,dx,dy,c,num)
 #generates a random ball with the given arguments
-def randomball(maxspeed,minr,maxr,xbound,ybound):
+def randomball(maxspeed,minr,maxr,xbound,ybound,num):
     dx = randint(maxspeed*-1,maxspeed)
     dy = randint(maxspeed*-1,maxspeed)
     r = randint(minr,maxr)
     x = randint(minr,(xbound-maxr))
     y = randint(minr,(ybound-maxr))
     color = choice( ["black", "blue", "red", "green", "magenta", "orange", "pink", "purple", "yellow"] )
-    return Ball(x,y,r,dx,dy,color)
+    return Ball(x,y,r,dx,dy,color,num)
     
         
