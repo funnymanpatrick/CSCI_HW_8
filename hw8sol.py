@@ -45,7 +45,7 @@ if __name__ == "__main__":
                         balls.append(randomball(maxspeed,minr,maxr,xbound,ybound,i))
                 #generate the ball from the doc
                 else:
-                    balls.append(Ball(int(l[0]),int(l[1]),int(l[2]),int(l[3]),int(l[4]),l[5]))
+                    balls.append(Ball(int(l[0]),int(l[1]),int(l[2]),int(l[3]),int(l[4]),l[5],i-1))
             i += 1
     print 'Initial ball configuration'
     for ball in balls:
@@ -55,24 +55,24 @@ if __name__ == "__main__":
     bNum = len(balls)
     while len(balls) > 1:
         i += 1
-        wait_time = 50
+        wait_time = 200
         chart_1.after(wait_time)
         for b in balls:
-            if b.draw == True:
-                b.move()
-                b.wallcheck(xbound, ybound)
-                for ball in balls:
-                    if ball != b:
-                        if b.intersect(ball):
-                            pirnt 'Iteration %i collision between ball %i and %i to form ball %i' %(i, b.num, ball.num, bNum)
-                            print b
-                            print ball
-                            balls.append(b.combine(ball), bNum)
-                            balls.remove(b)
-                            balls.remove(ball)
-                            print 'New', str(balls[-1])
-                            print 'Num remaining: %i' %len(balls)
-                            bNum += 1
+            b.move()
+            b.wallcheck(xbound, ybound)
+            for ball in balls:
+                if ball != b:
+                    if b.intersect(ball):
+                        print 'Iteration %i collision between ball %i and %i to form ball %i' %(i, b.num, ball.num, bNum)
+                        print b
+                        print ball
+                        balls.append(b.combine(ball,bNum))
+                        balls.remove(b)
+                        balls.remove(ball)
+                        print 'New', str(balls[-1])
+                        print 'Num remaining: %i' %len(balls)
+                        bNum += 1
+                        break
             if graphics:
                 bounding_box = (b.x-b.r, b.y-b.r,b.x+b.r, b.y+b.r)
                 chart_1.create_oval(bounding_box, fill=b.c)
@@ -82,4 +82,3 @@ if __name__ == "__main__":
     ## "events", which are user inputs.  The only user event here is
     ## closing the window, which ends the program. 
     root.mainloop()
-    raw_input()

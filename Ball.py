@@ -12,13 +12,13 @@ class Ball(object):
         self.num = num
     #called when print ball is executed
     def __str__(self):
-        return 'Ball: %i: position (%.1f,%.1f), radius %.1f, motion (%.1f,%.1f), color %s' %(self.num, self.x, self.y, self.r, self.dx, self.dy, self.c)
+        return 'Ball %i: position (%.1f,%.1f), radius %.1f, motion (%.1f,%.1f), color %s' %(self.num, self.x, self.y, self.r, self.dx, self.dy, self.c)
     #basic move function
     def move(self):
         self.x += self.dx
         self.y += self.dy
     #check if it should bounce against a wall
-    def wallcheck(self,xbound=1000,ybound=1000):
+    def wallcheck(self,xbound,ybound):
         if self. x + self.r >= xbound:
             self.dx *= -1
         elif self.x - self.r <= 0:
@@ -47,8 +47,6 @@ class Ball(object):
         dy = (ars * self.dy) + (aro * other.dy)
         dy /= (ars+aro)
         r = sqrt((ars+aro) / pi )
-        self.draw = False
-        other.draw = False
         if ars >= aro:
             c = self.c
         else:
