@@ -21,20 +21,12 @@ class Ball(object):
     def wallcheck(self,xbound,ybound):
         if self. x + self.r > xbound:
             self.dx *= -1
-            print self.num
-            #x = xbound - self.r
         elif self.x - self.r < 0:
             self.dx *= -1
-            print self.num
-            #x = self.r
         elif self.y + self.r > ybound:
             self.dy *= -1
-            print self.num
-            #y = ybound - self.r
         elif self.y - self.r < 0:
             self.dy *= -1
-            print self.num
-            #y = self.r
     #check if two balls are intersecting, return boolean
     def intersect(self,other):
         dist = sqrt((self.x-other.x)**2+(self.y-other.y)**2)

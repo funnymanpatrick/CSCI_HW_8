@@ -55,7 +55,7 @@ if __name__ == "__main__":
     bNum = len(balls)
     while len(balls) > 1 and i < maxit:
         i += 1
-        wait_time = 200
+        wait_time = 20
         chart_1.after(wait_time)
         chart_1.delete(tk.ALL)
         for b in balls:
@@ -78,7 +78,12 @@ if __name__ == "__main__":
                 bounding_box = (b.x-b.r, b.y-b.r,b.x+b.r, b.y+b.r)
                 chart_1.create_oval(bounding_box, fill=b.c)
                 chart_1.update()
-    print 'Ends at iteration %i with only ball %i remaining' %(i, balls[0].num)
+    if len(balls) == 1:
+        print 'Ends at iteration %i with only ball %i remaining' %(i, balls[0].num)
+    else:
+        print 'Ends at iteration %i with %i balls remaining:' %(i, len(balls))
+        for ball in balls:
+            print ball
     ## This is an infinite loop that allows the window to listen to
     ## "events", which are user inputs.  The only user event here is
     ## closing the window, which ends the program. 
